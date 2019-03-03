@@ -28,14 +28,14 @@ http://www.123.com/index.html 调用 https://www.123.com/server.php （协议不
 
 具体实现方法
 ---
-# 跨域资源共享（CORS）
+#### 跨域资源共享（CORS）
 原理：CORS的思想，就是使用自定义的HTTP头部让浏览器与服务器进行沟通，从而决定请求或响应是应该成功，还是应该失败。
  ```
   在服务器端，通过设置Access-Control-Allow-Origin来允许域请求
   如果浏览器检测到相应的设置，就可以允许Ajax进行跨域的访问。
    'Access-Control-Allow-Origin:*' //设置请求来源不受限制或者可以直接指定域名
  ```
-# 通过jsonp跨域
+#### 通过jsonp跨域
 jsonp，即json with padding，顾名思义，就是将json填充到一个盒子里
 
 原理：通过script标签引入一个js文件，这个js文件载入成功后会执行我们在url参数中指定的函数，并且会把我们需要的json数据作为参数传入，所以jsonp是需要服务器端的页面进行相应的配合的
@@ -62,7 +62,7 @@ jsonp，即json with padding，顾名思义，就是将json填充到一个盒子
 ```
 输出结果：dosomething(['a','b','c'])
 
-# 通过修改document.domain来跨子域（只适用于不同子域的框架间的交互）
+#### 通过修改document.domain来跨子域（只适用于不同子域的框架间的交互）
 情景：有一个页面，地址是http://www.example.com/a.html ，在这个页面里面有一个iframe，它的src是http://example.com/b.html, 很显然，这个页面与它里面的iframe框架是不同域的，所以我们是无法通过在页面中书写js代码来获取iframe中的东西的
 
 ```
@@ -84,7 +84,7 @@ jsonp，即json with padding，顾名思义，就是将json填充到一个盒子
       document.domain = 'example.com';//在iframe载入这个页面也设置document.domain，使之与主页面的document.domain相同
   </script>
 ```
-# 使用window.name来进行跨域
+#### 使用window.name来进行跨域
 
 情景：有一个www.example.com/a.html页面,需要通过a.html页面里的js来获取另一个位于不同域上的页面www.cnblogs.com/data.html里的数据。
 
@@ -120,7 +120,7 @@ jsonp，即json with padding，顾名思义，就是将json填充到一个盒子
 </body>
 </html>
 ```
-#  使用HTML5的window.postMessage方法跨域
+####  使用HTML5的window.postMessage方法跨域
 
 该方法是html5新引进的特性，可以使用它来向其它的window对象发送消息，无论这个window对象是属于同源或不同源
 
@@ -157,12 +157,4 @@ jsonp，即json with padding，顾名思义，就是将json填充到一个盒子
 ---
 
 https://www.cnblogs.com/yongshaoye/p/7423881.html
-
-
-
-
-
-
-
-
 
