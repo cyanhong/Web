@@ -1,3 +1,5 @@
+前几天做了好几套笔试题，发现自己对Promise这部分的内容还是不太理解，所以整理下
+
 简介
 ---
 Promise是一个对象，用来传递异步操作的消息。
@@ -130,3 +132,6 @@ catch方法是.then(null,rejection)的别名，用于指定发生错误时的回
 
 就写到这吧，以后再来更，错误之处，请大家指正
 
+参照博客
+---
+https://github.com/PDKSophia/blog.io
