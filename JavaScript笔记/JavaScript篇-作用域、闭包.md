@@ -85,6 +85,7 @@ changeColor局部环境可以访问全局环境中的color变量，但不能访�
 ---
 * 读取函数内部的变量
 * 让这些变量一直保存在内存中
+
 看一段代码
 ```
   function f1(){
@@ -133,6 +134,7 @@ changeColor局部环境可以访问全局环境中的color变量，但不能访�
 ---
 
 https://www.cnblogs.com/duanlianjiang/p/5036671.html
+
 红宝书《JavaScript高级程序设计》
 
 
