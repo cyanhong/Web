@@ -14,7 +14,7 @@
 
 来看代码
 
-```
+``` JavaScript
   var color = "blue"; 
   function changeColor(){ 
      var anotherColor = "red"; 
@@ -67,7 +67,7 @@ changeColor局部环境可以访问全局环境中的color变量，但不能访�
   
 ```
 既然f2可以访问f1中的局部变量，那只要把f2作为返回值，在f1外部就可以读取它的内部变量了
-```
+``` JavaScript
   function f1(){
     n = 999;
     function f2(){     // f2就是闭包
@@ -87,7 +87,7 @@ changeColor局部环境可以访问全局环境中的color变量，但不能访�
 * 让这些变量一直保存在内存中
 
 看一段代码
-```
+``` JavaScript
   function f1(){
     var n = 999;
     nAdd = function(){
@@ -117,7 +117,7 @@ changeColor局部环境可以访问全局环境中的color变量，但不能访�
 闭包虽好用，但却要谨慎使用，因为闭包会使得在函数中的变量都保存在内存中，内存消耗大，导致网页性能问题，在IE中，甚至会导致内存泄漏
 
 解决方法
-```
+``` JavaScript
   // 创建函数
   var compareName = createComparosonFunction('name')
 
