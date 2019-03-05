@@ -52,7 +52,7 @@ changeColor局部环境可以访问全局环境中的color变量，但不能访�
 实现闭包方法
 ---
 先看一段代码
-```
+``` JavaScript
   function f1(){
     n = 999;
     function f2(){
