@@ -212,6 +212,8 @@ Flex布局
 	background:red;
 }
 ```
+### 总结
+
 #### 通用方式
 
 * Flex布局
@@ -227,8 +229,80 @@ Flex布局
 
 绝对定位 + 0
 
+CSS3 新特性
+---
 
+面试中，最好说下自己用过的一些新特性，而不是拿自己死记硬背的东西
 
+```transition``` 过渡
+* transition-property: width;   对象参与过渡的属性
+* transition-duration: 1s;      过渡的持续时间
+* transition-timing-function: linear;  过渡的类型
+* transition-delay: 2s;         延迟过渡的时间
+
+```
+transition: all 2s ease-in 0s;
+	 //  分别对应上述四个属性
+	 // ease-in:加速  ease-out：减速 linear：匀速
+```
+
+```transform``` 变形转换
+主要包括translate（水平移动）、rotate（旋转）、scale（旋转）、scale（伸缩）、skew（倾斜）
+
+```animation``` 动画
+
+* animation-name 规定需要绑定到选择器的 keyframe
+* animation-duration 规定完成动画所花费的时间，以秒或毫秒计
+* animation-timing-function 规定动画的速度曲线
+* animation-delay 规定在动画开始之前的延迟
+* animation-iteration-count 规定动画应该播放的次数
+* animation-direction 规定是否应该轮流反向播放动画
+```
+div
+{
+	width:100px;
+	height:100px;
+	background:red;
+	position:relative;
+	animation:mymove 5s infinite;
+	-webkit-animation:mymove 5s infinite; /*Safari and Chrome*/
+}
+
+@keyframes mymove
+{
+	from {left:0px;}
+	to {left:200px;}
+}
+
+@-webkit-keyframes mymove /*Safari and Chrome*/
+{
+	from {left:0px;}
+	to {left:200px;}
+}
+```
+```border-radius```圆角
+```
+border-radius: 5px;
+```
+```box-shadow``` y阴影
+
+```
+div{
+	box-shadow: 10px 10px 5px #ccc;
+}
+```
+```-webkit-box```水平垂直居中
+
+```
+.box{
+  	display: -webkit-box;
+	width: 800px;
+   	height: 500px;
+    	-webkit-box-orient: horizontal;  // 父容器里子容器的排列方式，是水平还是垂直
+    	-webkit-box-pack: center;        // 父容器里子容器的水平对齐方式
+    	-webkit-box-align: center;       // 父容器里子容器的垂直对齐方式
+}
+```
 
 
 
