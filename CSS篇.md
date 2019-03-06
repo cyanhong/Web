@@ -55,7 +55,7 @@ css设置动画效果
 /* 当鼠标悬浮在button class为login的按钮时，触发changeColor动画 */
 
 button.login:hover {
-  -webkit-animation: 1s changeColor;
+  -webkit-animation: 1s changeColor;    // chrome和Safari
   animation: 1s changeColor;
 }
 
@@ -90,6 +90,52 @@ Transition 强调过渡，Transition ＋ Transform ＝ 两个关键帧的Animati
 Animation 强调流程与控制，Duration ＋ TransformLib ＋ Control ＝ 多个关键帧的Animation
 ```
 甚至于，我们可以说 : transition 是 Animation 的一个子集，即一个 Animation 是由多个 transition 组合而成的。
+
+Flex布局
+---
+
+```Flex布局```，即弹性布局，用来为盒状模型提供最大的灵活性,采用Flex布局的元素，称为Flex容器，容器默认存在两根轴：水平的主轴和垂直的交叉轴
+
+最常用来实现垂直居中
+
+### 指定Flex布局
+```
+  display: flex;
+```
+
+### 六大容器属性
+
+* ```flex-direction```:决定主轴的方向
+* ```flex-wrap```：决定如果一条轴线排不下，该如何换行
+* ```flex-flow```：是flex-direction属性和flex-wrap属性的简写形式，默认值为row nowrap
+* ```justify-content```：定义项目在主轴上的对齐方式
+* ```align-items```：定义项目在交叉轴上如何对齐
+* ```align-content```：定义多根轴线的对齐方式，如果项目只有一根轴线，则该属性不起作用
+
+怎么实现垂直居中
+---
+
+1 Flex布局
+```
+ /* css */
+ .box{
+  		 height: 300px;     //这里设置高度，才看的出垂直居中的效果
+    	display: flex;
+    	justify-content: center;    //主轴上的对齐方式
+    	align-items: center;        //交叉轴上的对齐方式
+  }
+  
+  /* html */
+  <div class="box">
+    <span>垂直居中</span>
+	 </div>
+```
+2 绝对定位和负边距
+
+```
+
+```
+
 
 
 
