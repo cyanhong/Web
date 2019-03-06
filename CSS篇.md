@@ -117,23 +117,35 @@ Flex布局
 
 1 Flex布局
 ```
- /* css */
- .box{
-  		 height: 300px;     //这里设置高度，才看的出垂直居中的效果
-    	display: flex;
-    	justify-content: center;    //主轴上的对齐方式
-    	align-items: center;        //交叉轴上的对齐方式
-  }
-  
-  /* html */
-  <div class="box">
-    <span>垂直居中</span>
-	 </div>
+	/* css */
+	.box{
+		height: 300px;     //这里设置高度，才看的出垂直居中的效果
+		display: flex;
+		justify-content: center;    //主轴上的对齐方式
+		align-items: center;        //交叉轴上的对齐方式
+	}
+
+	/* html */
+	<div class="box">
+	<span>垂直居中</span>
+	</div>
 ```
-2 绝对定位和负边距
+2 绝对定位+负边距
 
 ```
-
+.box{
+    	position: relative;
+    	height: 200px;
+    }
+  	.child {
+  		position: absolute;
+    	left: 50%;
+    	top: 50%;
+    	width: 200px;
+    	height: 50px;
+    	margin-left: -100px;
+    	margin-top: -25px;
+  	}
 ```
 
 
