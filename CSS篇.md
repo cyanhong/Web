@@ -10,7 +10,7 @@ CSS布局
  
  ```分为标准盒模型和IE盒模型```
  标准盒模型
- ![css1](https://github.com/cyanhong/web/tree/master/images/css-1.png)
+ ![css1](https://github.com/cyanhong/web/blob/master/images/css-1.png)
       
  
  
