@@ -116,19 +116,20 @@ Flex布局
 ---
 
 1 Flex布局
-```
-	/* css */
-	.box{
-		height: 300px;     //这里设置高度，才看的出垂直居中的效果
-		display: flex;
-		justify-content: center;    //主轴上的对齐方式
-		align-items: center;        //交叉轴上的对齐方式
-	}
 
-	/* html */
-	<div class="box">
-	<span>垂直居中</span>
-	</div>
+```
+/* css */
+.box{
+	height: 300px;     //这里设置高度，才看的出垂直居中的效果
+	display: flex;
+	justify-content: center;    //主轴上的对齐方式
+	align-items: center;        //交叉轴上的对齐方式
+}
+
+/* html */
+<div class="box">
+	<div class="child">垂直居中</div>
+</div>
 ```
 2 绝对定位+负边距
 
@@ -137,18 +138,94 @@ Flex布局
     	position: relative;
     	height: 200px;
     }
-  	.child {
-  		position: absolute;
-    	left: 50%;
-    	top: 50%;
-    	width: 200px;
-    	height: 50px;
-    	margin-left: -100px;
-    	margin-top: -25px;
-  	}
+.child {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 200px;
+	height: 50px;
+	margin-left: -100px;   //子元素宽度的一半
+	margin-top: -25px;     //子元素高度的一半
+}
+```
+3 利用table-cell（未脱离文本流）
+
+```
+.box{
+	display: table;   //变成块级表格元素
+	width:800px;
+	height: 500px;
+	text-align: center;   //水平居中
+}
+.child {
+	display: table-cell;  // 变成表格单元格
+	background: red;
+	vertical-align: middle;  // 垂直居中
+}
+```
+4 -webkit-box
+
+```
+.box{
+  	display: -webkit-box;
+	width: 800px;
+   	height: 500px;
+    	-webkit-box-orient: horizontal;  // 父容器里子容器的排列方式，是水平还是垂直
+    	-webkit-box-pack: center;        // 父容器里子容器的水平对齐方式
+    	-webkit-box-align: center;       // 父容器里子容器的垂直对齐方式
+}
+```
+5 绝对定位+ transfom （未知宽高情况下使用）
+
+```
+.box{
+	position: relative;
+	height: 200px;
+}
+.child {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+}
 ```
 
+6 绝对定位 + 0 （已知高度和宽度）
 
+```
+.box{
+	position:relative;
+	width:1000px;
+	height:500px;
+	background:#ccc;
+}
+.child{
+	position:absolute;
+	top:0;
+	left:0;
+	bottom:0;
+	right:0;
+	width:100px;   //宽度
+	height:100px;  //高度
+	overflow:auto;
+	margin:auto;
+	background:red;
+}
+```
+#### 通用方式
+
+* Flex布局
+* 绝对定位+负边距
+* table-cell
+* -webkit-box
+
+#### 不知道宽和高
+
+绝对定位+transform
+
+#### 已知宽度和高度
+
+绝对定位 + 0
 
 
 
